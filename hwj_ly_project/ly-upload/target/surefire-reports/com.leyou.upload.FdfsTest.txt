@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: com.leyou.upload.FdfsTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 13.124 s <<< FAILURE! - in com.leyou.upload.FdfsTest
+testUpload(com.leyou.upload.FdfsTest)  Time elapsed: 0.768 s  <<< ERROR!
+com.github.tobato.fastdfs.exception.FdfsConnectException: 无法获取服务端连接资源：can't create connection to/192.168.31.241:22122
+	at com.leyou.upload.FdfsTest.testUpload(FdfsTest.java:32)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at com.leyou.upload.FdfsTest.testUpload(FdfsTest.java:32)
+

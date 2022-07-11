@@ -1,0 +1,37 @@
+server:
+  port: 8093
+spring:
+  application:
+    name: search-service
+  rabbitmq:
+      host: 192.168.31.241
+      username: leyou
+      password: leyou
+      virtual-host: /leyou
+  datasource:
+    url: jdbc:mysql://localhost:3307/leyou
+    username: root
+    password: lifulai002100
+    hikari:
+      maximum-pool-size: 30
+      minimum-idle: 10
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch
+      cluster-nodes: 192.168.2.11:9300
+  jackson:
+    default-property-inclusion: non_null           #序列化,传数据给前端时 只包含不为空的字段
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+    registry-fetch-interval-seconds: 10
+  instance:
+    lease-renewal-interval-in-seconds: 5 #每隔15秒发送一次信条
+    lease-expiration-duration-in-seconds: 15 #10秒不发送就过期
+#ribbon:
+  #ReadTimeout: 60000
+  #ConnectTimeout: 60000
+  #instance:
+    #prefer-ip-address: true
+    #ip-address: 127.0.0.1

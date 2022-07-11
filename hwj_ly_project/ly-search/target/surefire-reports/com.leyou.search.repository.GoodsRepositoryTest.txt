@@ -1,0 +1,11 @@
+-------------------------------------------------------------------------------
+Test set: com.leyou.search.repository.GoodsRepositoryTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 25.425 s <<< FAILURE! - in com.leyou.search.repository.GoodsRepositoryTest
+loadData1(com.leyou.search.repository.GoodsRepositoryTest)  Time elapsed: 8.378 s  <<< ERROR!
+feign.FeignException: 
+status 500 reading GoodsClient#querySkuBySpuId(Long); content:
+{"timestamp":"2022-07-08T06:44:56.980+0000","status":500,"error":"Internal Server Error","message":"\r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: No operations allowed after connection closed.\r\n### The error may exist in com/leyou/item/mapper/SkuMapper.java (best guess)\r\n### The error may involve com.leyou.item.mapper.SkuMapper.select\r\n### The error occurred while executing a query\r\n### SQL: SELECT id,spu_id,title,images,price,own_spec,indexes,enable,create_time,last_update_time  FROM tb_sku  WHERE  spu_id = ?\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: No operations allowed after connection closed.\n; ]; No operations allowed after connection closed.; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: No operations allowed after connection closed.","path":"/sku/list"}
+	at com.leyou.search.repository.GoodsRepositoryTest.lambda$loadData1$0(GoodsRepositoryTest.java:69)
+	at com.leyou.search.repository.GoodsRepositoryTest.loadData1(GoodsRepositoryTest.java:74)
+

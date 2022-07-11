@@ -1,0 +1,17 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.leyou.config.FilterProperties",
+      "name": "ly.filter",
+      "type": "com.leyou.config.FilterProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.leyou.config.FilterProperties",
+      "name": "ly.filter.allow-paths",
+      "type": "java.util.List<java.lang.String>"
+    }
+  ]
+}

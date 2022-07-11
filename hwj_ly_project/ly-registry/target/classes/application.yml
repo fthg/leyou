@@ -1,0 +1,27 @@
+server:
+  port: 10086
+spring:
+  application:
+    name: ly-registry   #erueka自己微服务的名称
+#在springboot项目中引入了mybatis,会自动配置需要datasource,这个注册中心不需要，所以
+#在启动类的SpringBootApplication注解上添加exclude = {DataSourceAutoConfiguration.class}
+#这样就不需要配置datasource了
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8
+ #   username: root
+ #   password: lifulai002100
+ #   hikari:
+ #     maximum-pool-size: 30
+ #     minimum-idle: 10
+eureka:
+  client:
+    fetchRegistry: false  #要不要去注册中心获取其他服务的地址,默认值为true
+    #register-with-erueka: false            #不显示erueka自己的服务
+    #registerWithEureka: false
+    service-url:
+      defaultZone: http://127.0.0.1:${server.port}/eureka
+    register-with-eureka: false
+
+  server:
+    enableSelfPreservation: false # 关闭自我保护
+    evictionIntervalTimerInMs: 5000 # 每隔5秒进行一次服务列表清理
